@@ -1,0 +1,246 @@
+informations sur notre graphe
+
+Sommets du graphe: les Villes
+
+nom:A   id: 0 Villes adjacentes : [ C , D , E , B ,  ]
+
+nom:C   id: 2 Villes adjacentes : [ A , E ,  ]
+
+nom:D   id: 3 Villes adjacentes : [ A , B , F ,  ]
+
+nom:E   id: 4 Villes adjacentes : [ A , B , C , F , G , H ,  ]
+
+nom:B   id: 1 Villes adjacentes : [ A , D , E , F ,  ]
+
+nom:F   id: 5 Villes adjacentes : [ B , D , E , G ,  ]
+
+nom:G   id: 6 Villes adjacentes : [ E , F , H ,  ]
+
+nom:H   id: 7 Villes adjacentes : [ E , G ,  ]
+
+
+
+Arrêtes de notre graphe: Chemins 
+
+Auto-route (A----1.0 km----C)   
+
+
+Montagne (A----4.0 km----D)   
+
+
+Auto-route (A----2.0 km----E)   
+
+
+Auto-route (A----3.0 km----B)   
+
+
+Route nationale (B----2.0 km----D)   
+
+
+Montagne (B----3.0 km----E)   
+
+
+Route nationale (B----1.0 km----F)   
+
+
+Auto-route (C----1.0 km----E)   
+
+
+Auto-route (D----4.0 km----F)   
+
+
+Auto-route (E----2.0 km----F)   
+
+
+Auto-route (E----7.0 km----G)   
+
+
+Route nationale (E----2.0 km----H)   
+
+
+Route nationale (F----4.0 km----G)   
+
+
+Auto-route (G----5.0 km----H)   
+
+
+//////////////////////////////////////
+
+
+VHEICULE UTILISE
+identifiant:0 type du vehicule: Voiture    à essence LGP  Littre_consomme:55.0littres/100km
+//////////////////////////////////////
+
+
+pour aller de  A à  H on vous prospose l'itinéaire suivant 
+nom:A   id: 0
+nom:E   id: 4
+nom:H   id: 7
+Distance à parcourir est:4.0  km  Taux d'émission de CO2 est de l'ordre de 4029.2999999999997 g
+/n
+Auto-route (A----2.0 km----E)    en emettant 2197,8 g
+Route nationale (E----2.0 km----H)   en emettant 1831,49 g
+Resultat de la fonction Dijkstra qui prend en compte le paramètre (Taux d'Emission du CO2)
+
+The minimum rate of CO2 issued from A to A is 0,0 g en parcourant:  0.0  km
+The minimum rate of CO2 issued from A to C is 1098,9 g en parcourant:  1.0  km
+The minimum rate of CO2 issued from A to D is 2930,4 g en parcourant:  4.0  km
+The minimum rate of CO2 issued from A to E is 2197,8 g en parcourant:  2.0  km
+The minimum rate of CO2 issued from A to B is 3296,7 g en parcourant:  3.0  km
+The minimum rate of CO2 issued from A to F is 4212,5 g en parcourant:  4.0  km
+The minimum rate of CO2 issued from A to G is 7875,5 g en parcourant:  8.0  km
+The minimum rate of CO2 issued from A to H is 4029,3 g en parcourant:  4.0  km
+Resultat de la fonction Dijkstra qui prend en compte le paramètre (Distance)
+
+The shortest distance from A to A is 0.0km  en emettant 0,0 g
+The shortest distance from A to C is 1.0km  en emettant 1098,9 g
+The shortest distance from A to D is 4.0km  en emettant 2930,4 g
+The shortest distance from A to E is 2.0km  en emettant 2197,8 g
+The shortest distance from A to B is 3.0km  en emettant 3296,7 g
+The shortest distance from A to F is 4.0km  en emettant 4395,6 g
+The shortest distance from A to G is 8.0km  en emettant 8058,6 g
+The shortest distance from A to H is 4.0km  en emettant 4029,3 g
+
+ comparaison des deux fonctions Dijkstra
+The minimum rate of CO2 issued from A to A is 0,0 g en parcourant :  0.0  km
+The shortest distance from A to A is 0.0km  en emettant 0,0 g
+
+
+The minimum rate of CO2 issued from A to C is 1098,9 g en parcourant :  1.0  km
+The shortest distance from A to C is 1.0km  en emettant 1098,9 g
+
+
+The minimum rate of CO2 issued from A to D is 2930,4 g en parcourant :  4.0  km
+The shortest distance from A to D is 4.0km  en emettant 2930,4 g
+
+
+The minimum rate of CO2 issued from A to E is 2197,8 g en parcourant :  2.0  km
+The shortest distance from A to E is 2.0km  en emettant 2197,8 g
+
+
+The minimum rate of CO2 issued from A to B is 3296,7 g en parcourant :  3.0  km
+The shortest distance from A to B is 3.0km  en emettant 3296,7 g
+
+
+The minimum rate of CO2 issued from A to F is 4212,5 g en parcourant :  4.0  km
+The shortest distance from A to F is 4.0km  en emettant 4395,6 g
+
+
+The minimum rate of CO2 issued from A to G is 7875,5 g en parcourant :  8.0  km
+The shortest distance from A to G is 8.0km  en emettant 8058,6 g
+
+
+The minimum rate of CO2 issued from A to H is 4029,3 g en parcourant :  4.0  km
+The shortest distance from A to H is 4.0km  en emettant 4029,3 g
+
+J'ai representé les résultats de la fonction Dijkstra qui calcule le plus court chemin entre deux villes et non pas Dijkstra qui renvoie le chemin consommant moins de Co2 car le taux d'émission est proportionnel à la distance.
+
+
+          A       C       D       E       B       F       G       H       
+A(0,0)    0,0     1,0     4,0     2,0     3,0     inf     inf     inf     
+C(1,0)    0,0     1,0     4,0     2,0     3,0     inf     inf     inf     
+E(2,0)    0,0     1,0     4,0     2,0     5,0     4,0     9,0     4,0     
+B(3,0)    0,0     1,0     5,0     2,0     3,0     4,0     9,0     4,0     
+D(4,0)    0,0     1,0     4,0     2,0     3,0     8,0     9,0     4,0     
+F(4,0)    0,0     1,0     4,0     2,0     3,0     4,0     8,0     4,0     
+H(4,0)    0,0     1,0     4,0     2,0     3,0     4,0     9,0     4,0     
+G(8,0)    0,0     1,0     4,0     2,0     3,0     4,0     8,0     4,0     
+
+///////////////////////
+
+
+
+
+Environnement Réel:
+
+Ce programme calcule le trajet qui pour un véhicule donné emet le moins de gaz CO2 possible en partant d'une ville source vers une ville arrivée dans la base de donnée suivante:
+informations sur notre graphe
+
+Sommets du graphe: les Villes
+
+nom:Akbou   id: 0 Villes adjacentes : [ Bejaia , Tizi , Alger , Bouira ,  ]
+
+nom:Bejaia   id: 1 Villes adjacentes : [ Akbou , Tizi , Alger , Jijel ,  ]
+
+nom:Tizi   id: 2 Villes adjacentes : [ Akbou , Bejaia , Alger , Bouira ,  ]
+
+nom:Alger   id: 3 Villes adjacentes : [ Akbou , Bejaia , Tizi , Blida , Tipaza ,  ]
+
+nom:Bouira   id: 5 Villes adjacentes : [ Akbou , Tizi ,  ]
+
+nom:Jijel   id: 6 Villes adjacentes : [ Bejaia ,  ]
+
+nom:Blida   id: 7 Villes adjacentes : [ Alger , Medea , Tipaza ,  ]
+
+nom:Tipaza   id: 8 Villes adjacentes : [ Alger , Tenes , Blida ,  ]
+
+nom:Medea   id: 4 Villes adjacentes : [ Blida ,  ]
+
+nom:Tenes   id: 9 Villes adjacentes : [ Tipaza ,  ]
+
+
+
+Arrêtes de notre graphe: Chemins 
+
+Auto-route (Akbou----60.0 km----Bejaia)   
+
+
+Montagne (Akbou----70.0 km----Tizi)   
+
+
+Route nationale (Bejaia----80.0 km----Tizi)   
+
+
+Auto-route (Akbou----120.0 km----Alger)   
+
+
+Route nationale (Bejaia----246.0 km----Alger)   
+
+
+Montagne (Alger----106.0 km----Tizi)   
+
+
+Auto-route (Akbou----87.0 km----Bouira)   
+
+
+Auto-route (Tizi----125.0 km----Bouira)   
+
+
+Route nationale (Bejaia----89.4 km----Jijel)   
+
+
+Auto-route (Alger----44.5 km----Blida)   
+
+
+Route nationale (Alger----74.1 km----Tipaza)   
+
+
+Route nationale (Blida----33.5 km----Medea)   
+
+
+Route nationale (Tipaza----131.0 km----Tenes)   
+
+
+Route nationale (Tipaza----50.5 km----Blida)   
+
+
+Veuillez saisir Le type de véhicule parmi les types suivant ( Respectez la syntaxe ): 
+VoitureDiesel ,VoitureEssenceCNG ,VoitureEssenceLPG ,TransportRoutierMarchandises ,BusStandard ,BusArticule ,Moto 
+Diesel
+Veuillez rentrer le nombre de litre/100km consommé par votre véhicule:  vous pourrez les trouver dans les caracteristiques techniques de votre véhicule
+45
+Akbou ,Bejaia ,Tizi ,Alger ,Bouira ,Jijel ,Blida ,Tipaza ,Medea ,Tenes ,
+Veuillez rentrer votre ville source (La première lettre doit être en majuscule, le reste en minuscule)
+Akbou
+Veuillez rentrer votre ville destination (La première lettre doit être en majuscule, le reste en minuscule)
+Tenes
+null
+Calcul de Parcours de Akbou vers Tenes
+nom:Akbou   id: 0
+nom:Alger   id: 3
+nom:Tipaza   id: 8
+nom:Tenes   id: 9
+/n
+Auto-route (Akbou----120.0 km----Alger)   
+Route nationale (Alger----74.1 km----Tipaza)   
+Route nationale (Tipaza----131.0 km----Tenes)   
